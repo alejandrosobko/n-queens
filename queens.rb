@@ -28,6 +28,18 @@ end
 
 # Test
 abc = ('A'..'Z').to_a
-queens = 'A1, C3'.split(', ').map { |x| Queen.new(x) }
 
-puts some_queen_in_collision?(abc, queens)
+t1 = 'A1, C3'.split(', ').map { |x| Queen.new(x) }
+t2 = 'A1, A2, A3, A4, A5, A6, A7, A8'.split(', ').map { |x| Queen.new(x) }
+t3 = 'A1, H8, '.split(', ').map { |x| Queen.new(x) }
+
+f1 = 'H1, B2, E3, C4, F5, D8'.split(', ').map { |x| Queen.new(x) }
+f2 = 'A1, H6, E4, C5, B3, D7'.split(', ').map { |x| Queen.new(x) }
+f3 = 'G4'.split(', ').map { |x| Queen.new(x) }
+
+puts "expected true, result: #{some_queen_in_collision?(abc, t1)}"
+puts "expected true, result: #{some_queen_in_collision?(abc, t2)}"
+puts "expected true, result: #{some_queen_in_collision?(abc, t3)}"
+puts "expected false, result: #{some_queen_in_collision?(abc, f1)}"
+puts "expected false, result: #{some_queen_in_collision?(abc, f2)}"
+puts "expected false, result: #{some_queen_in_collision?(abc, f3)}"
