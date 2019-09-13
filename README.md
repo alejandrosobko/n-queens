@@ -1,6 +1,7 @@
-# n-queens
+# About
 
 This project is used to teach about the main concepts of Git.
+
 
 ### N-Queens
 
