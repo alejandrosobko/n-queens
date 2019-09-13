@@ -29,5 +29,7 @@ end
 # Test
 abc = ('A'..'Z').to_a
 queens = 'A1, C3'.split(', ').map { |x| Queen.new(x) }
+otro_test = 'A1, D4'.split(', ').map { |x| Queen.new(x) }
 
-puts some_queen_in_collision?(abc, queens)
+puts some_queen_in_collision?(abc, queens) # true
+puts some_queen_in_collision?(abc, otro_test) # true
