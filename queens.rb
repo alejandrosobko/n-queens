@@ -10,9 +10,15 @@ end
 def attacked_by?(abc, queen1, queen2)
   same_x = queen1.x == queen2.x
   same_y = queen1.y == queen2.y
-  is_diagonal = abc.index(queen1.x) == (abc.index(queen2.x) - (queen1.y - queen2.y)*-1)
 
-  same_x || same_y || is_diagonal
+  same_x || same_y || in_diagonal_collision?(abc, queen1, queen2)
+end
+
+def in_diagonal_collision?(abc, queen1, queen2)
+  num = abc.index(queen1.x) - abc.index(queen2.x)
+  den = queen1.y - queen2.y
+
+  (num / den).abs == 1
 end
 
 def in_collision?(abc, queen, queens)
