@@ -8,10 +8,13 @@ class Queen
 end
 
 def attacked_by?(abc, queen1, queen2)
-  same_x = queen1.x == queen2.x
   same_y = queen1.y == queen2.y
 
-  same_x || same_y || in_diagonal_collision?(abc, queen1, queen2)
+  in_horizontal_collision?(queen1, queen2) || same_y || in_diagonal_collision?(abc, queen1, queen2)
+end
+
+def in_horizontal_collision?(queen1, queen2)
+  queen1.x == queen2.x
 end
 
 def in_diagonal_collision?(abc, queen1, queen2)
