@@ -7,3 +7,6 @@ This project is used to teach about the main concepts of Git.
 
 The topic is about determining if some of the queens on a chess board are in collision with each other.
 
+### Autor
+
+Alejandro sobko
